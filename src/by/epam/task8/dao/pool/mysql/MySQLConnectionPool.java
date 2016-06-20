@@ -27,7 +27,7 @@ public class MySQLConnectionPool {
     private List<Connection> availableConnections = new ArrayList<>();
     private List<Connection> usedConnections = new ArrayList<>();
 
-    public Connection getConnection() throws SQLException {
+    public synchronized Connection getConnection() throws SQLException {
         if(availableConnections.isEmpty()){
             Connection newConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/epam_movie_rating",
                     "root", "root");
@@ -39,7 +39,7 @@ public class MySQLConnectionPool {
         return connection;
     }
 
-    public void freeConnection(Connection connection) throws SQLException {
+    public synchronized void freeConnection(Connection connection) throws SQLException {
         if(usedConnections.isEmpty()){
             throw new MySQLConnectionPoolException("Try to free pool when there is no used connections");
         }
