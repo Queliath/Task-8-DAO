@@ -1,7 +1,7 @@
-package by.epam.task8.dao;
+package by.epam.movierating.dao.interfaces;
 
-import by.epam.task8.dao.exception.DAOException;
-import by.epam.task8.domain.Country;
+import by.epam.movierating.dao.exception.DAOException;
+import by.epam.movierating.domain.Country;
 
 import java.util.List;
 

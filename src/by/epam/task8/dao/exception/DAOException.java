@@ -1,4 +1,4 @@
-package by.epam.task8.dao.exception;
+package by.epam.movierating.dao.exception;
 
 /**
  * Created by Владислав on 11.06.2016.

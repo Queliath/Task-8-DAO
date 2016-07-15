@@ -1,9 +1,9 @@
-package by.epam.task8.dao.pool.mysql;
+package by.epam.movierating.dao.pool.mysql;
 
 /**
  * Created by Владислав on 18.06.2016.
  */
-public class MySQLConnectionPoolException extends RuntimeException {
+public class MySQLConnectionPoolException extends Exception {
     public MySQLConnectionPoolException(String message) {
         super(message);
     }

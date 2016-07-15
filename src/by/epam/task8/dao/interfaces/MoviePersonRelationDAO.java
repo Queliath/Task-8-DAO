@@ -1,6 +1,6 @@
-package by.epam.task8.dao;
+package by.epam.movierating.dao.interfaces;
 
-import by.epam.task8.dao.exception.DAOException;
+import by.epam.movierating.dao.exception.DAOException;
 
 /**
  * Created by Владислав on 19.06.2016.

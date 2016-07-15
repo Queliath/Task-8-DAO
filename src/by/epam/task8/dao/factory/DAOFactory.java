@@ -1,15 +1,13 @@
-package by.epam.task8.dao.factory;
+package by.epam.movierating.dao.factory;
 
-import by.epam.task8.dao.*;
+import by.epam.movierating.dao.exception.DAOException;
+import by.epam.movierating.dao.interfaces.*;
 
 /**
- * Created by Владислав on 11.06.2016.
+ * Created by Владислав on 14.07.2016.
  */
 public abstract class DAOFactory {
-
     private static final int MY_SQL = 1;
-
-    private static final String configFileURI = "by/epam/task8/dao/factory/ConfigDAO.xml";
 
     private static final DAOFactory mySQLDAOFactory = new MySQLDAOFactory();
 
@@ -24,19 +22,18 @@ public abstract class DAOFactory {
     public abstract MovieGenreDAO getMovieGenreDAO();
     public abstract MoviePersonRelationDAO getMoviePersonRelationDAO();
 
-    public static DAOFactory getDAOFactory(){
+    public static DAOFactory getInstance() throws DAOException {
         int factoryType = readConfig();
 
         switch (factoryType) {
             case MY_SQL:
                 return mySQLDAOFactory;
             default:
-                return null;
+                throw new DAOException("Wrong config file for DAO layer");
         }
     }
 
     private static int readConfig(){
         return MY_SQL;
     }
-
 }

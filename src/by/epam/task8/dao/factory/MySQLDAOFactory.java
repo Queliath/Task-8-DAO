@@ -1,13 +1,12 @@
-package by.epam.task8.dao.factory;
+package by.epam.movierating.dao.factory;
 
-import by.epam.task8.dao.*;
-import by.epam.task8.dao.impl.mysql.*;
+import by.epam.movierating.dao.impl.mysql.*;
+import by.epam.movierating.dao.interfaces.*;
 
 /**
- * Created by Владислав on 11.06.2016.
+ * Created by Владислав on 14.07.2016.
  */
 public class MySQLDAOFactory extends DAOFactory {
-
     private final MovieDAO mySQLMovieDAO = new MySQLMovieDAO();
     private final GenreDAO mySQLGenreDAO = new MySQLGenreDAO();
     private final CountryDAO mySQLCountryDAO = new MySQLCountryDAO();
